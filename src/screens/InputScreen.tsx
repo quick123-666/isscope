@@ -28,6 +28,12 @@ function formatTimeAgo(timestamp: number): string {
   return `${days}d ago`;
 }
 
+function LocalStorageWarning() {
+  return (
+<LocalStorageWarning />
+  );
+}
+
 // Storage keys for localStorage
 const STORAGE_KEY_GITHUB = 'isscope_github_token';
 const STORAGE_KEY_OPENROUTER = 'isscope_openrouter_key';
@@ -533,6 +539,7 @@ export function InputScreen() {
                   >
                     GitHub Token (optional, for higher rate limits)
                   </label>
+                  <LocalStorageWarning />
                   <div style={{ position: 'relative' }}>
                     <input
                       type="password"
@@ -578,6 +585,7 @@ export function InputScreen() {
                   >
                     OpenRouter API Key (required for analysis)
                   </label>
+                  <LocalStorageWarning />
                   <div style={{ position: 'relative' }}>
                     <input
                       type="password"
